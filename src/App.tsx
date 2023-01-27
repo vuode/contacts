@@ -10,7 +10,7 @@ const App: React.FC = () => {
   const [scrollHandler, loading] = useScrollLoad(loadMore, reachedEnd)
 
   return (
-    <div className="h-screen overflow-scroll" onScroll={scrollHandler}>
+    <div className="h-screen h-screen-ios overflow-scroll" onScroll={scrollHandler}>
       <div className="mx-auto max-w-3xl">
         <div className="my-8 mx-4 bg-slate-200 rounded-3xl">
           <header className="p-4 bg-slate-100 rounded-3xl flex justify-center">
