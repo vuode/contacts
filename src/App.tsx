@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <div className="h-screen overflow-scroll" onScroll={scrollHandler}>
       <div className="mx-auto max-w-3xl">
-        <div className="my-8 bg-slate-200 rounded-3xl">
+        <div className="my-8 mx-4 bg-slate-200 rounded-3xl">
           <header className="p-4 bg-slate-100 rounded-3xl flex justify-center">
             <h1 className="text-lg">Contacts App</h1>
           </header>
