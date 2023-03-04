@@ -15,7 +15,7 @@ export const useContacts = () => {
   )
 
   const toggleChecked = useCallback(
-    (id: number, log?: boolean) => {
+    (id: number) => {
       setChecked((previous) => {
         const newChecked = new Set(previous)
         const removed = newChecked.delete(id)
@@ -24,15 +24,15 @@ export const useContacts = () => {
           newChecked.add(id)
         }
 
-        if (log) {
-          console.log(newChecked)
-        }
-
         return newChecked
       })
     },
     [setChecked],
   )
+
+  const clearChecked = useCallback(() => {
+    setChecked(new Set())
+  }, [setChecked])
 
   useEffect(() => {
     const populate = async () => {
@@ -44,5 +44,11 @@ export const useContacts = () => {
     void populate()
   }, [])
 
-  return [filteredContactsList, setTerm, checked, toggleChecked] as const
+  return [
+    filteredContactsList,
+    setTerm,
+    checked,
+    toggleChecked,
+    clearChecked,
+  ] as const
 }

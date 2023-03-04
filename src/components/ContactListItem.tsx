@@ -19,21 +19,16 @@ export const ContactListItem: React.FC<ContactListItemProps> = ({
       <button
         className="p-2 flex items-center w-full"
         onClick={() => {
-          toggle(id, true)
+          toggle(id)
         }}
       >
         <Avatar src={avatar} firstName={first_name} lastName={last_name} />
         <span className="mx-4 grow">{`${first_name} ${last_name}`}</span>
         <input
-          className="h-6 w-6 rounded-lg shadow"
+          className="h-6 w-6 rounded-lg shadow focus:ring-transparent"
           type="checkbox"
           checked={isChecked}
-          onClick={(event) => {
-            event.stopPropagation()
-          }}
-          onChange={() => {
-            toggle(id)
-          }}
+          readOnly
         />
       </button>
     </li>

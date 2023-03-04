@@ -5,7 +5,8 @@ import {useScrollLoad} from './hooks/useScrollLoad'
 import {useSlowLoad} from './hooks/useSlowLoad'
 
 const App: React.FC = () => {
-  const [filteredContactsList, setTerm, checked, toggleChecked] = useContacts()
+  const [filteredContactsList, setTerm, checked, toggleChecked, clearChecked] =
+    useContacts()
   const [renderedContactsList, loadMore, reachedEnd] = useSlowLoad(
     filteredContactsList,
     10,
@@ -41,6 +42,15 @@ const App: React.FC = () => {
               ))}
               {loading && <LoadingItem />}
             </ul>
+            {checked.size > 0 && (
+              <button
+                className="px-6 py-4 fixed bottom-8 right-4 bg-slate-800 text-white rounded-2xl"
+                type="button"
+                onClick={clearChecked}
+              >
+                {checked.size} selected
+              </button>
+            )}
           </main>
         </div>
       </div>
