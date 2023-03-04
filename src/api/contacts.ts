@@ -8,7 +8,7 @@ export interface Contact {
 }
 
 export const getContacts = async () => {
-  const response = await fetch('https://teacode-recruitment-challenge.s3.eu-central-1.amazonaws.com/users.json')
+  const response = await fetch('/data.json')
 
   const data = await response.json() as Contact[]
 
