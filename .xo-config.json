@@ -1,0 +1,11 @@
+{
+  "space": true,
+  "semicolon": false,
+  "prettier": true,
+  "rules": {
+    "import/extensions": "off",
+    "unicorn/filename-case": "off",
+    "@typescript-eslint/naming-convention": "off"
+  },
+  "ignore": "./*.cjs"
+}

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react"
+import {useCallback, useEffect, useMemo, useState} from 'react'
 
 export const useSlowLoad = <T>(data: T[], count: number) => {
   const [openCount, setOpenCount] = useState(count)
@@ -7,10 +7,9 @@ export const useSlowLoad = <T>(data: T[], count: number) => {
 
   const reachedEnd = useMemo(() => data.length <= openCount, [openCount, data])
 
-  const loadMore = useCallback(
-    () => setOpenCount((previous) => reachedEnd ? previous : previous + count),
-    [setOpenCount, reachedEnd]
-  )
+  const loadMore = useCallback(() => {
+    setOpenCount((previous) => (reachedEnd ? previous : previous + count))
+  }, [setOpenCount, reachedEnd])
 
   useEffect(() => {
     setOpenCount(count)
