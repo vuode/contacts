@@ -36,7 +36,7 @@ const App: React.FC = () => {
                   key={contact.id}
                   contact={contact}
                   toggle={toggleChecked}
-                  isChecked={checked.includes(contact.id)}
+                  isChecked={checked.has(contact.id)}
                 />
               ))}
               {loading && <LoadingItem />}
