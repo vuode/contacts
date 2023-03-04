@@ -7,7 +7,8 @@ Features:
 * Search by name or last name
 * Debounced loading for optimal image fetching
 * Selecting contacts
-* Logging selected IDs to console and toggling selection on contact click
+* Displaying number of selected contacts
+* Clearing selected contacts
 
 How to run project locally:
 1. Clone the repo
